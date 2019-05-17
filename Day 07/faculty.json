@@ -1,0 +1,35 @@
+{
+    "faculty1": {
+                    "FirstName" : "Robert",
+                    "LastName" : "Langley",
+                    "Photo" : "www.google.com/key=?Robert",
+                    "Department" : "CSE",
+                    "Research Areas" : ["DL","Quantum Computing"],
+                    "Contact Details" : { 
+                                            "Email": ["roblang@gmail.com", "rob.lang1@yahoo.com"],
+                                            "PhoneNumber" : [7774937939 ,55374547]
+                                        }
+    
+                }
+                
+    "faculty2": { 
+                    "FirstName" : "Michael",
+                    "LastName" : "Caine",
+                    "Photo" : "www.google.com/key=?Michael",
+                    "Department" : "CSE",
+                    "Research Areas" : ["Data Mining","DataBase Management"],
+                    "Contact Details" : { 
+                                            "Email": ["mikecaine@gmail.com", "mike.caine123@yahoo.com"],
+                                            "PhoneNumber" : [4764784844 ,4874478444]
+    
+                                        }
+    
+    
+    
+    
+                }
+
+
+
+
+}
