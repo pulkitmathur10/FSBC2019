@@ -1,8 +1,12 @@
 #Random Data
 
 import numpy as np 
-#x = np.linspace(5, 15, 40, dtype = np.int32)
+from collections import Counter
 
-x = np.arange(20, dtype=np.uint8)
+random_nos =np.random.randint(5, 15, 40)
+count_freq=Counter(random_nos)
+print(count_freq.most_common()[0][0])
 
-i = np.random()
+#With Numpy
+most_freq = np.bincount(random_nos).argmax()
+print("Most Frequent using Numpy:", most_freq)
