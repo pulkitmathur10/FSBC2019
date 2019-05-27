@@ -28,18 +28,18 @@ regressor_uni.fit(features_uni, chance)
 #print (pd.DataFrame(Predu, chance_test_uni))
 
 
-x = ['Cabrini', 340, 4.7, 4.5, 9.8,2]
+x = ['Beaver', 316, 3, 3.5, 8, 1]
 x = np.array(x)
 x = x.reshape(1, -1)
 x[:, 0] = labelencoder.transform(x[:, 0])
 
-onehotencoder = OneHotEncoder(categorical_features = [0])
+#onehotencoder = OneHotEncoder(categorical_features=[0])
 x = onehotencoder.transform(x).toarray()
 x = x[:, 1:]
 
 
 
-adm_chance = regressor_uni.predict(xp)
+adm_chance = regressor_uni.predict(x)
 
 
 
