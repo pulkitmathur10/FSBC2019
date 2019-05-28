@@ -43,7 +43,7 @@ print (regressor.coef_)
 
 #what would be prediction of score if someone studies 5 hours
 print (regressor.coef_*5 + regressor.intercept_)
-print regressor.predict(5)
+print regressor.predict()
 
 #Now explain the best fit line
 # and gradient descent
