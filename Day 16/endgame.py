@@ -4,6 +4,7 @@ import pandas as pd
 #import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split 
+import statsmodels.api as sm
 
 E = pd.read_csv('endgame.csv')
 
@@ -16,23 +17,26 @@ E['Gross-to-Date'] = E['Gross-to-Date'].str.replace(',', '')
 E['Gross-to-Date'] = E['Gross-to-Date'].astype(int)
 
 E['Avg_Theatre'] = E['Avg_Theatre'].str.replace('$', '')
-E['Avg/Theatre'] = E['Avg/Theatre'].str.replace(',', '')
-E['Avg/Theatre'] = E['Avg/Theatre'].astype(int)
+E['Avg_Theatre'] = E['Avg_Theatre'].str.replace(',', '')
+E['Avg_Theatre'] = E['Avg_Theatre'].astype(int)
+
+E['Theaters'] = E['Theaters'].str.replace(',', '')
+E['Theaters'] = E['Theaters'].astype(int)
 
 
 
 #day = E.iloc[:,-1].values
 #gross = E.iloc[:, -2].values
-da = E.iloc[:,2:-2].values
-gross = E.iloc[:, -2:-1].values
+e_features = E.iloc[:, -1:].values
+gross = E.iloc[:, [-2, -3, -4] ].values
+gross = gross.reshape(3,-1)
 
-import statsmodels.api as sm
 
-daym = sm.add_constant(day)
+e_features_m = sm.add_constant(e_features)
 
-day_opt = day[:, [0, 1, 2, 3, 4, 5]]
-regressor_OLS = sm.OLS(endog = gross, exog = day_opt).fit()
-regressor_OLS.summary()
+e_features_opt = e_features_m[:, [0, 1]]
+regressor_e = sm.OLS(endog = gross, exog = e_features_opt).fit()
+regressor_e.summary()
 
 
 

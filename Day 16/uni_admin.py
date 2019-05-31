@@ -40,12 +40,4 @@ x = x[:, 1:]
 
 
 adm_chance = regressor_uni.predict(x)
-
-
-
-
-#df1 = uni_dataset[uni_dataset['Univercity Name'] == 'Albany']
-#df2 = uni_dataset[uni_dataset['Univercity Name'] == 'Cabrini']
-#df3 = uni_dataset[uni_dataset['Univercity Name'] == 'Beaver']
-#df4 = uni_dataset[uni_dataset['Univercity Name'] == 'Maryland']
-#df5 = uni_dataset[uni_dataset['Univercity Name'] == 'Alaska Methodist University']
+print(adm_chance[0]*100)

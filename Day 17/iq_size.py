@@ -15,17 +15,16 @@ iq = iq_dataset.iloc[:, 0].values
 
 features_iq = sm.add_constant(features_iq)
 
-#features_opt = features[:, [0, 1, 2]]
-regressor_iq = sm.OLS(endog = iq, exog = features_iq).fit()
-#regressor_iq.params
-regressor_iq.summary()
 
+regressor_iq = sm.OLS(endog = iq, exog = features_iq).fit()
+print(regressor_iq.summary())
+print("\nWeight is not much significant here.")
 
 features_opt = features_iq[:, [0, 1, 2]]
 regressor_iq = sm.OLS(endog = iq, exog = features_opt).fit()
-regressor_iq.summary()
+print(regressor_iq.summary())
 
 x = np.array([1,90,70])
 x = x.reshape(1, -1)
 iq = regressor_iq.predict(x)
-print(iq)
+print("The IQ of the given person is:", iq)

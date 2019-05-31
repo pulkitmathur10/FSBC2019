@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 
-#imports the CSV dataset using pandas
+
 
 dataset_female = pd.read_csv('Female_Stats.csv')  
 
@@ -14,9 +14,9 @@ labels = dataset_female.iloc[:, 0].values
 
 features = sm.add_constant(features)
 
-#features_opt = features[:, [0, 1, 2]]
+
 regressor_OLS = sm.OLS(endog = labels, exog = features).fit()
-#regressor_OLS.summary()
+
 p = regressor_OLS.params
 
 m = p[1]

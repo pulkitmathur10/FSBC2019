@@ -17,5 +17,5 @@ regressor_m.fit(features_movie, labels_movie)
 #labels_pred_m = regressor.predict(features_test_m)
 #df_m = pd.DataFrame({'Actual': labels_test_m[0], 'Predicted': labels_pred_m[0]})
 
-box_office = regressor_m.predict(10)
+print(regressor_m.predict(10))
 

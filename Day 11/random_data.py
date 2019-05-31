@@ -4,6 +4,8 @@ import numpy as np
 from collections import Counter
 
 random_nos =np.random.randint(5, 15, 40)
+
+#With Counter
 count_freq=Counter(random_nos)
 print(count_freq.most_common()[0][0])
 
