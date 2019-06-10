@@ -16,7 +16,7 @@ features_p = df.drop('lpsa',axis = 1)
 label_p = df['lpsa']
 
 
-features_train_p, features_test_p, labels_train_p,labels_test_p = train_test_split(features_p, label_p, test_size=0.3, random_state=1)
+features_train_p, features_test_p, labels_train_p,labels_test_p = train_test_split(features_p, label_p, test_size=0.25, random_state=1)
 
 sc = StandardScaler()
 features_train_p = sc.fit_transform(features_train_p)
